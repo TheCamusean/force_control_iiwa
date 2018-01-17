@@ -19,6 +19,8 @@ find_package(catkin REQUIRED COMPONENTS
 
 find_package(Eigen3 REQUIRED)
 
+find_package(idyntree-superbuild REQUIRED)
+
 set(eigen_functionalities_DIR "/usr/local/lib/cmake/eigen_functionalities")
 find_package(eigen_functionalities REQUIRED)
 
