@@ -15,6 +15,31 @@
 #include <iDynTree/Core/EigenHelpers.h>
 #include <math.h>
 
+struct EigenRobotState
+{
+    void resize(int nrOfInternalDOFs)
+    {
+        jointPos.resize(nrOfInternalDOFs);
+        jointVel.resize(nrOfInternalDOFs);
+    }
+
+    void random()
+    {
+        world_H_base.setIdentity();
+        jointPos.setRandom();
+        baseVel.setRandom();
+        jointVel.setRandom();
+        gravity[0] = 0;
+        gravity[1] = 0;
+        gravity[2] = -9.8;
+    }
+
+    Eigen::Matrix4d world_H_base;
+    Eigen::VectorXd jointPos;
+    Eigen::Matrix<double,6,1> baseVel;
+    Eigen::VectorXd jointVel;
+    Eigen::Vector3d gravity;
+};
 
 int main(int argc, char **argv)
 {
@@ -30,6 +55,9 @@ int main(int argc, char **argv)
 	ros::Rate r(10);
 	while (ros::ok())
 	{
+
+		const iDynTree::Model & model = kinDynComp.model();
+    	EigenRobotState eigRobotState.resize(model.getNrOfDOFs());
 		ros::spinOnce();
 		r.sleep();
 	} 
