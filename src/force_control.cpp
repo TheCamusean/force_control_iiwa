@@ -53,11 +53,15 @@ int main(int argc, char **argv)
 
 	//ros::spin();
 	ros::Rate r(10);
+
+	iDynTree::ModelLoader mdlLoader;
+	std::string modelFile = "a string with the urdf information";
+
+    bool ok = mdlLoader.loadModelFromFile(modelFile);
+
 	while (ros::ok())
 	{
 
-		const iDynTree::Model & model = kinDynComp.model();
-    	EigenRobotState eigRobotState.resize(model.getNrOfDOFs());
 		ros::spinOnce();
 		r.sleep();
 	} 
