@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<package>
+  <name>force_control_iiwa</name>
+  <version>0.0.0</version>
+  <description>The iiwa package</description>
+
+  <maintainer email="julen.urain@tekniker.es">jurain</maintainer>
+
+
+  <license>TODO</license>
+
+
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+
+
+
+  <build_depend>trajectory_msgs</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>geometry_msgs</build_depend>
+  <build_depend>actionlib</build_depend>
+  <build_depend>actionlib_msgs</build_depend>
+  <build_depend>control_msgs</build_depend>
+  <build_depend>arm_manager</build_depend>
+  <build_depend>roscpp</build_depend>
+
+  <build_depend>message_generation</build_depend>
+  <run_depend>message_generation</run_depend>
+
+
+  <run_depend>message_runtime</run_depend>
+  <run_depend>std_msgs</run_depend>
+  <run_depend>sensor_msgs</run_depend>
+  <run_depend>geometry_msgs</run_depend>
+  <run_depend>trajectory_msgs</run_depend>
+  <run_depend>actionlib</run_depend>
+  <run_depend>actionlib_msgs</run_depend>
+  <run_depend>control_msgs</run_depend>
+  <run_depend>arm_manager</run_depend>
+  <run_depend>roscpp</run_depend>
+
+    <build_depend>iiwa_ros</build_depend>
+  <run_depend>iiwa_ros</run_depend>
+
+
+  <!-- The export tag contains other, unspecified, tags -->
+  <export>
+
+  </export>
+</package>
