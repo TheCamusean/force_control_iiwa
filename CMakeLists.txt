@@ -55,7 +55,7 @@ find_package(eigen_functionalities REQUIRED)
 
 
 catkin_package(
- INCLUDE_DIRS include
+ INCLUDE_DIRS include 
  LIBRARIES lib_state_machine_iiwa
  CATKIN_DEPENDS message_runtime actionlib_msgs
 #  DEPENDS system_lib
@@ -77,6 +77,11 @@ include_directories( include
 # add_library(lib_state_machine_iiwa src/state_machine_iiwa_helper.cpp)
 # add_library(lib_binpicking_iiwa src/binPickingAction_class.cpp)
 
+add_executable(force_control_iiwa src/force_control.cpp)
+
+target_link_libraries(force_control_iiwa ${catkin_LIBRARIES} ${iDynTree_LIBRARIES})
+
+add_dependencies(force_control_iiwa ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS} )
 
 
 # add_executable(camera_server src/getContainerPose.cpp)
